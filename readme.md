@@ -44,13 +44,13 @@ var chart = new Chart(ctx, {
 ```
 
 ## Flujo de trabajo
-Para obtener esta información, se ocupó la api [Coronavirus COVID19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc#4b88f773-be9b-484f-b521-bb58dda0315c) 
+Para obtener esta información, se ocupó la api [Coronavirus COVID19 API.](https://documenter.getpostman.com/view/10808728/SzS8rjbc#4b88f773-be9b-484f-b521-bb58dda0315c) 
 
-En el caso de Chile. Las solicitudes de consumos de datos se hicieron con el método fetch además de la función async/await. Se modularizaron los componentes .js mediate las funciones export/import. No utilicé api keys.
+Las solicitudes de consumos de datos se hicieron con el método fetch además de la función async/await. Se modularizaron los componentes .js mediate las funciones export/import. No utilicé api keys.
 
 
 ## Uso del proyecto
 Los gráficos representados representan la cantidad de muertes y pacientes recuperados en el contexto de la pandemia en algunos países del mundo. Estos datos comprenden una marco temporal amplio porque la idea es representar de manera global estos datos. Para conocer más detalles numéricos, acercar puntero al gráficos y un cuadro de información se va a desplegar. 
 
-## Capturas
+## Captura del proyecto
 ![Gato Tom](./Captura%20de%20pantalla%202022-10-29%20183431.png)
