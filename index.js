@@ -1,95 +1,124 @@
-import responsive from './components/responsiveNavbar.js'
-import { getTotalCasesByDate } from './components/DataChile.js'
-// import { getTotalCasesByDate } from './components/DataGermany.js'
-// import { getTotalCasesByDate } from './components/DataJapan.js'
+import { getJapanDeaths } from './components/JapanData.js' //aqui estoy importando el componente getJapanDeaths desde el .js que tengo en la carpeta components
 
-function totalCasesChart(data, ctx) {
+function totalJapanDeaths(data, ctx) {
   const {
-    confirmed,
-    // deaths,
-    // recovered,
+    deaths,
   } = data
-  const chart = new Chart(ctx, {
+
+const myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: confirmed.map(item => new Intl.DateTimeFormat('es-MX', { month: 'long', day: 'numeric' }).format(new Date(item.date))),
-      datasets: [
-        // {
-        //   label: 'Muertes',
-        //   borderColor: 'red',
-        //   data: deaths.map(item => item.cases),
-        // },
-        // {
-        //   label: 'Recuperados',
-        //   borderColor: 'green',
-        //   data: recovered.map(item => item.cases),
-        // },
-        {
-          label: 'Confirmados',
-          borderColor: 'orange',
-          data: confirmed.map(item => item.cases),
-        }
-      ]
+        labels: deaths.map(item => new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric' }).format(new Date(item.date))),
+        datasets: [{
+            label: 'Muertes en Japón',
+            data: deaths.map(item => item.cases),
+            borderColor: [
+                'red',
+            ],
+            borderWidth: 8
+        }]
     },
     options: {
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: false,
-          }
-        }]
-      },
-      title: {
-        display: true,
-        text: 'Todos los casos desde el primer reporte COVID-19',
-        fontSize: 30,
-        padding: 30,
-        fontColor: '#12619c',
-      },
-      legend: {
-        position: 'bottom',
-        labels: {
-          padding: 20,
-          boxWidth: 15,
-          fontFamily: 'system-ui',
-          fontColor: 'black',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         }
-      },
-      layout: {
-        padding: {
-          right: 50,
-        }
-      },
-      tooltips: {
-        backgroundColor: '#0584f6',
-        titleFontSize: 20,
-        xPadding: 20,
-        yPadding: 20,
-        bodyFontSize: 15,
-        bodySpacing: 10,
-        mode: 'x',
-      },
-      elements: {
-        line: {
-          borderWidth: 8,
-          fill: false,
-        },
-        point: {
-          radius: 6,
-          borderWidth: 4,
-          backgroundColor: 'white',
-          hoverRadius: 8,
-          hoverBorderWidth: 4,
-        }
-      }
     }
-  })
+});
 }
 
-async function renderCharts() {
-  const ctx = document.querySelector('#chart').getContext('2d')
-  const data = await getTotalCasesByDate()
-  totalCasesChart(data, ctx)
+async function renderJapanChart() {
+  const ctx = document.querySelector('#Japan').getContext('2d')
+  const data = await getJapanDeaths()
+  totalJapanDeaths(data, ctx)
 }
-renderCharts()
+renderJapanChart()
 
+
+
+
+
+
+
+import { getGermanyDeaths } from './components/GermanyData.js'
+
+function totalGermanyDeaths(data, ctx) {
+  const {
+    deaths,
+  } = data
+
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: deaths.map(item => new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric' }).format(new Date(item.date))),
+        datasets: [{
+            label: 'Muertes en Alemania',
+            data: deaths.map(item => item.cases),
+            borderColor: [
+                'orange',
+            ],
+            borderWidth: 8
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+}
+
+async function renderGermanyChart() {
+  const ctx = document.querySelector('#Germany').getContext('2d')
+  const data = await getGermanyDeaths()
+  totalGermanyDeaths(data, ctx)
+}
+
+renderGermanyChart()
+
+
+
+
+
+
+
+import { getChileDeaths } from './components/ChileData.js'
+
+function totalChileDeaths(data, ctx) {
+  const {
+    deaths,
+  } = data
+
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: deaths.map(item => new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric' }).format(new Date(item.date))),
+        datasets: [{
+            label: 'Muertes en Chile',
+            data: deaths.map(item => item.cases),
+            borderColor: [
+                'orange',
+            ],
+            borderWidth: 8
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+}
+
+async function renderChileChart() {
+  const ctx = document.querySelector('#Chile').getContext('2d')
+  const data = await getChileDeaths()
+  totalChileDeaths(data, ctx)
+}
+
+renderChileChart()

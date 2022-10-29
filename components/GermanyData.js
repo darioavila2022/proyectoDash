@@ -1,5 +1,5 @@
-export async function getData() {
-    const response = await fetch('https://api.covid19api.com/total/dayone/country/chile/status/confirmed')
+export async function getGermanyData() {
+    // const response = await fetch('https://api.covid19api.com/total/dayone/country/spain/status/deaths')
     const data = await response.json()
     return data
   }
@@ -7,23 +7,17 @@ export async function getData() {
   export function sortByDate(data) {
     return import('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js')
       .then(() => {
-        // const recovered = _.sortBy(Object.values(data.recovered), ['date'])
-        // const deaths = _.sortBy(Object.values(data.deaths), ['date'])
-        const confirmed = _.sortBy(Object.values(data.confirmed), ['date'])
+        const deaths = _.sortBy(Object.values(data.deaths), ['date'])
         return {
-          // recovered,
-          // deaths,
-          confirmed,
+          deaths,
         }
       })
   }
   
-  export async function getTotalCasesByDate() {
-    const data = await getData()
+  export async function getGermanyDeaths() {
+    const data = await getGermanyData()
     const dataByDate = {
-      confirmed: {},
-      // recovered: {},
-      // deaths: {},
+      deaths: {},
     }
     data.forEach((item) => {
       try {
