@@ -1,5 +1,7 @@
 # Proyecto Dashboard
 
+Enlace a proyecto deployed https://fancy-piroshki-ade917.netlify.app/
+
 En este proyecto tipo dashboard se muestra un número de gráficos para mostrar casos de COVID-19 en algunos países del mundo, incluyendo Chile. Este proyecto fue realizado con la instalación y uso de NodeJs (npm) y Chart.js (link). 
 
 ## Instalación de Node.js
