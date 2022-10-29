@@ -1,0 +1,1 @@
+En este proyecto tipo dashboard se muestran distintos tipos de gráficos utilizando chart.js para mostrar casos de COVID-19 en algunos países del mundo, incluyendo Chile. Para obtener esta información, se ocupó la api 'https://api.covid19api.com/total/dayone/country/chile/status/confirmed', en el caso de Chile. Se modularizaron los componentes mediate export/import.

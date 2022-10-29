@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="./virus-covid-solid.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <script type="module" src="./app.js"></script>
-    <title>Covid 19 World News</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="./virus-covid-solid.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/81a0707a3d.js" crossorigin="anonymous"></script>
+    <title>Dashboard</title>
 </head>
+
 <body>
-<canvas id="chileChart" width="400" height="400"></canvas>
+    <div class="navbar">
+        <a class="active" href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+            <i class="fa fa-bars"></i></a>
+    </div>
+    <div class="content">
+        <div class="grid-container">
+            <h2>CoviDeath</h2>
+            <div class="item1">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>by Darío Ávila A.</h2>
+            <i class="fa-brands fa-facebook fa-lg"></i>
+            <i class="fa-brands fa-tiktok fa-lg"></i>
+            <i class="fa-brands fa-linkedin fa-lg"></i>
+            <i class="fa-brands fa-github fa-lg"></i>
+            <i class="fa-brands fa-youtube fa-lg"></i>
+            <i class="fa-brands fa-instagram fa-lg"></i>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="./index.js" type="module"></script>
+    <script>
+
+    </script>
 </body>
+
 </html>
